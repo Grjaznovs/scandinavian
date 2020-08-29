@@ -68,14 +68,14 @@ class ScandinavianWorldController extends Controller {
     				])
     			;
 
-				Session::flash("message_success", __('scandinavian.msg_success_file_upload'));
-			} catch (\Exception $e) {
-				Session::flash("message_error", __('scandinavian.msg_error_db'));
-				report($e);
-			}
-    	} else {
-			Session::flash("message_error", __('application.msg_empty'));
+			Session::flash("message_success", __('scandinavian.msg_success_file_upload'));
+		} catch (\Exception $e) {
+			Session::flash("message_error", __('scandinavian.msg_error_db'));
+			report($e);
 		}
+    	} else {
+		Session::flash("message_error", __('application.msg_empty'));
+	}
 
     	return redirect()->back();
     }
